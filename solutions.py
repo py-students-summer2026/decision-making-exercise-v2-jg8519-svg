@@ -27,6 +27,14 @@ def is_square():
       :returns: True if square (i.e. if equal length and height), False otherwise.
     """
     #### write your solution for this function below here. ####
+    width = float(input("Enter the width(int or float): "))
+    height = float(input("Enter the height(int or float): "))
+
+    if width == height:
+        return True
+    else:
+        return False
+
 
 
 def get_greatest():
@@ -38,6 +46,14 @@ def get_greatest():
     :returns: the greatest of the two input numbers, as an int.
     """
     #### write your solution for this function below here. ####
+    number1 = int(input("Enter the first integer: "))
+    number2 = int(input("Enter the second integer: "))
+
+    if number1 > number2:
+        return number1
+    else:
+        return number2
+
 
 
 def get_bmi_category():
@@ -60,6 +76,28 @@ def get_bmi_category():
       :returns: The name of the BMI statistical category, based on the inputted height and weight.
     """
     #### write your solution for this function below here. ####
+    height = float(input("Enter your height in inches: "))
+    weight = float(input("Enter your weight in pounds: "))
+
+    bmi = 703 * weight / height ** 2
+
+    if bmi < 15:
+        return ("Very severely underweight")
+    elif bmi < 16:
+        return ("Severely underweight")
+    elif bmi < 18.5:
+        return ("Underweight")
+    elif bmi < 25:
+        return ("Normal")
+    elif bmi < 30:
+        return ("Overweight")
+    elif bmi < 35:
+        return ("Moderately obese")
+    elif bmi < 40:
+        return ("Severely obese")       
+    else:
+        return ("Very severely obese")
+
 
 
 def get_discount():
@@ -72,6 +110,19 @@ def get_discount():
       :returns: The cost of the masks, after any discounts, e.g. "$4,000" for 1000 masks.
     """
     #### write your solution for this function below here. ####
+    masks = int(input("Enter the number of masks you want to purchase: "))
+
+    cost = masks * 5
+
+    if masks >= 5000:
+        cost = cost * 0.8
+
+    cost = round(cost)
+
+    return "$" + format(cost, ",")
+
+
+
 
 
 def is_leap_year():
@@ -85,3 +136,14 @@ def is_leap_year():
         get_year()
     )  # this line is given to you - the variable, year, holds the current year
     #### write your solution for this function below here. ####
+
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+
+
